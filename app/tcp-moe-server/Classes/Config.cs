@@ -15,6 +15,6 @@
         /**
          * URL to the API.
          */
-        public static string apiUrl = "http://env:8080";
+        public static string apiUrl = "http://127.0.0.1:8080";
     }
 }

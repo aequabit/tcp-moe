@@ -12,6 +12,11 @@ namespace tcp_moe_server.Classes
             Console.WriteLine(txt);
         }
 
+        public static string Base64EncodeUrl(string data)
+        {
+            return data.Replace("+", "-").Replace("/", "_").Replace("=", "~");
+        }
+
         public static string Base64Encode(string data)
         {
             return Convert.ToBase64String(

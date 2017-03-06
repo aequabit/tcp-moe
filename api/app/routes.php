@@ -9,7 +9,7 @@ $app->get('/authentication', function () use ($app) {
 
     $username = $app->request->get('username');
     $password = $app->request->get('password');
-    $hwid = $app->request->get('hwid');
+    $hwid = base64_decode(str_replace(['-', '_', '~'], ['+', '/', '='], $app->request->get('hwid')));
 
     $user = \MoeApi\Models\User::where('name', $username)->first();
     if (!$user) {
