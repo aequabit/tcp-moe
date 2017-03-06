@@ -1,0 +1,8 @@
+app/.vs
+app/tcp-moe-client/bin
+app/tcp-moe-client/obj
+app/tcp-moe-server/bin
+app/tcp-moe-server/obj
+app/Newtonsoft.Json
+api/composer.lock
+api/vendor
