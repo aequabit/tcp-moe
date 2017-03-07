@@ -15,11 +15,20 @@ namespace tcp_moe_server.Classes
             this.callback = callback;
 
             wc.DownloadStringCompleted += Wc_DownloadStringCompleted;
-            wc.DownloadStringAsync(new Uri(Config.apiUrl + url + parameters));
+
+            try
+            {
+                wc.DownloadStringAsync(new Uri(Config.apiUrl + url + parameters));
+            }
+            catch { }
         }
         private void Wc_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
-            callback(e.Result);
+            try
+            {
+                callback(e.Result);
+            }
+            catch { }
         }
     }
 }

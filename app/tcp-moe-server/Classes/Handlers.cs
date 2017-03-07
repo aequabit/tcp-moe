@@ -100,10 +100,10 @@ namespace tcp_moe_server.Classes
              */
             new Http(
                 "/authentication",
-                String.Format("?username={0}&password={1}&hwid={2}", username, password, hwid),
+                String.Format("?username={0}&password={1}&hwid={2}", username, password, Helper.Base64EncodeUrl(hwid)),
                 (response) =>
             {
-                Helper.Log("[client] {0}: auth: successful", client.EndPoint.ToString(), username, password, Helper.Base64EncodeUrl(hwid));
+                Helper.Log("[client] {0}: auth: successful", client.EndPoint.ToString(), username, password, hwid);
                 switch (response)
                 {
                     case "unknown_user":
