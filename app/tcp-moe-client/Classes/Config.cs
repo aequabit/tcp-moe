@@ -1,4 +1,10 @@
-﻿namespace tcp_moe_client.Classes
+/**
+ * Part of the tcp-moe project.
+ * Property of aequabit.
+ * Distributed under the Apache 2.0 License.
+ */
+
+namespace tcp_moe_client.Classes
 {
     public class Config
     {

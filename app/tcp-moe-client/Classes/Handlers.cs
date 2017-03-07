@@ -1,4 +1,10 @@
-﻿using System.Collections.Generic;
+/**
+ * Part of the tcp-moe project.
+ * Property of aequabit.
+ * Distributed under the Apache 2.0 License.
+ */
+
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -104,7 +110,7 @@ namespace tcp_moe_client.Classes
              * Send the handshake packet.
              */
             Senders.Handshake(keys);
-            
+
             Session.HandshakeDone = true;
         }
 

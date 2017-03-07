@@ -1,4 +1,10 @@
-﻿using System;
+/**
+ * Part of the tcp-moe project.
+ * Property of aequabit.
+ * Distributed under the Apache 2.0 License.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +23,7 @@ namespace tcp_moe_server.Classes
                     (int)PacketHeader.Handshake,
                     publicKey,
                     version
-                )    
+                )
             );
         }
 
@@ -41,7 +47,7 @@ namespace tcp_moe_server.Classes
                     (int)response,
                     username,
                     rank
-                )    
+                )
             );
         }
 

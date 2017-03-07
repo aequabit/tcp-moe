@@ -1,4 +1,10 @@
-﻿using System;
+/**
+ * Part of the tcp-moe project.
+ * Property of aequabit.
+ * Distributed under the Apache 2.0 License.
+ */
+
+using System;
 using System.Windows.Forms;
 
 namespace tcp_moe_client.Classes
@@ -103,7 +109,7 @@ namespace tcp_moe_client.Classes
         public void Send(byte[] data)
         {
             /**
-             * If the handshake is done, encrypt the data. 
+             * If the handshake is done, encrypt the data.
              */
             if (Session.HandshakeDone)
                 data = Session.encrypt(data);

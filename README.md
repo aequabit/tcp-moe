@@ -12,3 +12,4 @@ Credits:
 - TCP library - aeonhack (https://hackforums.net/member.php?action=profile&uid=101640)
 - EmbeddedAssembly - https://www.codeproject.com/Articles/528178/Load-DLL-From-Embedded-Resource - License: CPOL
 - Json.NET - http://www.newtonsoft.com/json - License: MIT
+- PHP AES class - http://aesencryption.net

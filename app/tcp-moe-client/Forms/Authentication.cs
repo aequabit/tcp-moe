@@ -1,3 +1,9 @@
+/**
+ * Part of the tcp-moe project.
+ * Property of aequabit.
+ * Distributed under the Apache 2.0 License.
+ */
+
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
