@@ -12,19 +12,9 @@ namespace tcp_moe_client.Classes
     public class UI
     {
         public class MsgBox {
-            public static void Info(string body, string title="tcp-moe")
+            public static void Show(string body, string title="tcp-moe", MessageBoxIcon icon = MessageBoxIcon.None)
             {
-                MessageBox.Show(body, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            public static void Warning(string body, string title = "tcp-moe")
-            {
-                MessageBox.Show(body, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-            public static void Error(string body, string title = "tcp-moe")
-            {
-                MessageBox.Show(body, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(body, title, MessageBoxButtons.OK, icon);
             }
         }
     }

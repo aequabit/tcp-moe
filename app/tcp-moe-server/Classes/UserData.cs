@@ -15,7 +15,6 @@ namespace tcp_moe_server.Classes
         public string Password;
         public string Hwid;
         public string Rank;
-        public string SessionId;
 
         public bool Authenticated = false;
         public bool HandshakeDone = false;

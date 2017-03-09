@@ -80,7 +80,7 @@ namespace tcp_moe_client.Classes
              */
             if (version != Config.version)
             {
-                UI.MsgBox.Error("Your client is outdated.", "Client outdated");
+                UI.MsgBox.Show("Your client is outdated.", "Client outdated", System.Windows.Forms.MessageBoxIcon.Error);
                 Worker.instance.Shutdown();
                 return;
             }
@@ -116,7 +116,7 @@ namespace tcp_moe_client.Classes
 
         public static void Error(string message)
         {
-            UI.MsgBox.Error(message);
+            UI.MsgBox.Show(message, "Error", System.Windows.Forms.MessageBoxIcon.Error);
         }
 
         public static void Authentication(AuthResponse response, string username, string rank)
@@ -134,23 +134,27 @@ namespace tcp_moe_client.Classes
                     break;
 
                 case AuthResponse.UnknownUser:
-                    UI.MsgBox.Error("The user specified does not exist.", "Authentication error.");
+                    UI.MsgBox.Show("The user specified does not exist.", "Authentication error.", System.Windows.Forms.MessageBoxIcon.Error);
                     break;
 
                 case AuthResponse.InvalidPassword:
-                    UI.MsgBox.Error("The entered password is incorrect.", "Authentication error.");
+                    UI.MsgBox.Show("The entered password is incorrect.", "Authentication error.", System.Windows.Forms.MessageBoxIcon.Error);
                     break;
 
                 case AuthResponse.InvalidHwid:
-                    UI.MsgBox.Error("Your hardware changed since the last login.", "Authentication error.");
+                    UI.MsgBox.Show("Your hardware changed since the last login.", "Authentication error.", System.Windows.Forms.MessageBoxIcon.Error);
                     break;
 
                 case AuthResponse.Unverified:
-                    UI.MsgBox.Error("Your account isn't verified yet.", "Authentication error.");
+                    UI.MsgBox.Show("Your account isn't verified yet.", "Authentication error.", System.Windows.Forms.MessageBoxIcon.Error);
                     break;
 
                 case AuthResponse.Banned:
-                    UI.MsgBox.Error("You have been banned from using tcp-moe services.", "Authentication error.");
+                    UI.MsgBox.Show("You have been banned from using tcp-moe services.", "Authentication error.", System.Windows.Forms.MessageBoxIcon.Error);
+                    break;
+
+                case AuthResponse.ServerError:
+                    UI.MsgBox.Show("The server retuned an error.", "Authentication error.", System.Windows.Forms.MessageBoxIcon.Error);
                     break;
             }
             if (response != AuthResponse.Success)

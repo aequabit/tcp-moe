@@ -31,7 +31,7 @@ namespace tcp_moe_server.Classes
             }
             catch
 			{
-			    Helper.Log("[http] can't connect to api");		
+                callback("%API_ERROR%");
 			}
         }
     }

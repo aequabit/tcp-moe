@@ -30,7 +30,8 @@ namespace tcp_moe_server.Classes
             InvalidPassword = 2,
             InvalidHwid = 3,
             Banned = 4,
-            Unverified = 5
+            Unverified = 5,
+            ServerError = 6
         }
     }
 }

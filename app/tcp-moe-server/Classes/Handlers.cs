@@ -109,9 +109,13 @@ namespace tcp_moe_server.Classes
                 String.Format("?username={0}&password={1}&hwid={2}", username, password, Helper.Base64EncodeUrl(hwid)),
                 (response) =>
             {
-                Helper.Log("[client] {0}: auth: successful", client.EndPoint.ToString(), username, password, hwid);
+                Helper.Log("[client] {0}: auth: {1}", client.EndPoint.ToString(), response);
                 switch (response)
                 {
+                    case "%API_ERROR%":
+                        Senders.Authentication(client, AuthResponse.ServerError);
+                        break;
+
                     case "unknown_user":
                         Senders.Authentication(client, AuthResponse.UnknownUser);
                         break;
@@ -174,8 +178,9 @@ namespace tcp_moe_server.Classes
                 {
                     Helper.Log("[client] {0}: products - {1} - successful", client.EndPoint.ToString(), user.Username);
 
-                    if (response == "invalid_usage" || response == "unknown_user")
+                    if (response == "%API_ERROR%" || response == "invalid_usage" || response == "unknown_user")
                     {
+                        Senders.Error(client, "The server retuned an error.");
                         return;
                     }
 
@@ -200,8 +205,9 @@ namespace tcp_moe_server.Classes
                 {
                     Helper.Log("[client] {0}: load - {1} / {2} - successful", client.EndPoint.ToString(), user.Username, product);
 
-                    if (response == "invalid_usage" || response == "unknown_product")
+                    if (response == "%API_ERROR%" || response == "invalid_usage" || response == "unknown_product")
                     {
+                        Senders.Error(client, "The server retuned an error.");
                         return;
                     }
 
