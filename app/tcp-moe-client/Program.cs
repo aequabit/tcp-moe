@@ -26,7 +26,7 @@ namespace tcp_moe_client
             var mutex = new System.Threading.Mutex(true, "tcp-moe-client", out result);
             if (!result)
             {
-                UI.MsgBox.Error("Only one instance of tcp-moe can be running at a time.", "Only one instance");
+                UI.MsgBox.Show("Only one instance of tcp-moe can be running at a time.", "Only one instance", MessageBoxIcon.Error);
                 return;
             }
 

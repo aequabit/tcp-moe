@@ -33,7 +33,7 @@ namespace tcp_moe_client.Classes
 
             if (!Worker.instance.ClientConnected() && Worker.instance.running)
             {
-                UI.MsgBox.Error("Can't connect to server.", "Connection failure");
+                UI.MsgBox.Show("Can't connect to server.", "Connection failure", System.Windows.Forms.MessageBoxIcon.Error);
                 Worker.instance.Shutdown();
             }
         }

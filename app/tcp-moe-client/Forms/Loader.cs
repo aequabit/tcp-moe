@@ -73,7 +73,7 @@ namespace tcp_moe_client.Forms
         {
             this.Invoke((MethodInvoker)delegate
             {
-                UI.MsgBox.Info("Successfully loaded " + lstCheatList.SelectedItem.ToString() + "!", "Injection successful");
+                UI.MsgBox.Show("Successfully loaded " + lstCheatList.SelectedItem.ToString() + "!", "Injection successful", MessageBoxIcon.Information);
                 Worker.instance.Shutdown();
             });
         }
