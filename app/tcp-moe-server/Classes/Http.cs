@@ -21,12 +21,7 @@ namespace tcp_moe_server.Classes
             this.callback = callback;
 
             wc.DownloadStringCompleted += Wc_DownloadStringCompleted;
-
-            try
-            {
-                wc.DownloadStringAsync(new Uri(Config.apiUrl + url + parameters));
-            }
-            catch { }
+            wc.DownloadStringAsync(new Uri(Config.apiUrl + url + parameters));
         }
         private void Wc_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
@@ -34,7 +29,10 @@ namespace tcp_moe_server.Classes
             {
                 callback(e.Result);
             }
-            catch { }
+            catch
+			{
+			    Helper.Log("[http] can't connect to api");		
+			}
         }
     }
 }
