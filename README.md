@@ -1,5 +1,9 @@
 # tcp-moe - Open-Source C# Cheat Loader
 
+![Banner](http://i.imgur.com/pUKvm3D.jpg)
+
+Banner by Shiro- <3
+
 ![Login](https://i.aqbt.pw/LrAjkzmI) ![Loader](https://i.aqbt.pw/muBJbx31)
 ![Server](https://i.aqbt.pw/Zr7fOoTD)
 
