@@ -8,6 +8,8 @@ Banner by Shiro- <3
 ![Login](https://i.aqbt.pw/LrAjkzmI) ![Loader](https://i.aqbt.pw/muBJbx31)
 ![Server](https://i.aqbt.pw/Zr7fOoTD)
 
+Comes without injection functionality.
+
 Dependencies:
 - Composer  
 - PHP >=5.6  
